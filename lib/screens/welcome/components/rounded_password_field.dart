@@ -4,8 +4,10 @@ import 'package:sihadir/constant.dart';
 
 class RoundedPasswordField extends StatelessWidget {
   final ValueChanged<String> onChanged;
+  final myController;
   const RoundedPasswordField({
     Key key,
+    this.myController,
     this.onChanged,
   }) : super(key: key);
 
@@ -13,6 +15,7 @@ class RoundedPasswordField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFieldContainer(
       child: TextField(
+        controller: myController,
         obscureText: true,
         onChanged: onChanged,
         cursorColor: kPrimaryColor,

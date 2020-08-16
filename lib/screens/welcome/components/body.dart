@@ -3,7 +3,7 @@ import 'package:sihadir/Screens/Login/login_screen.dart';
 // import 'package:sihadir/Screens/Signup/signup_screen.dart';
 import 'package:sihadir/Screens/Welcome/components/background.dart';
 import 'package:sihadir/Screens/Welcome/components/rounded_button.dart';
-import 'package:sihadir/constant.dart';
+// import 'package:sihadir/constant.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Body extends StatelessWidget {
@@ -16,17 +16,17 @@ class Body extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            SizedBox(height: size.height * 0.05),
+            SvgPicture.asset(
+              "assets/icons/logoc.svg",
+              height: size.height * 0.30,
+            ),
             Text(
               "WELCOME TO",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Color(0xFF0352a1),
                   fontSize: 20),
-            ),
-            SizedBox(height: size.height * 0.05),
-            SvgPicture.asset(
-              "assets/icons/logoc.svg",
-              height: size.height * 0.30,
             ),
             Text(
               'SIHADIR Apps',
