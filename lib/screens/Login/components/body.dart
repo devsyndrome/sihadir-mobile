@@ -63,6 +63,7 @@ class Body extends StatelessWidget {
                 text: "LOGIN",
                 press: () {
                   this._doLogin(context);
+                  // Navigator.pushReplacementNamed(context, 'dashboard');
                 }),
             SizedBox(height: size.height * 0.03),
           ],
@@ -77,7 +78,7 @@ class Body extends StatelessWidget {
               context: context,
               title: "Login Failed",
               type: AlertType.warning,
-              desc: "Field cannot be empty.")
+              desc: "Field is required.")
           .show();
       return;
     }
@@ -96,6 +97,7 @@ class Body extends StatelessWidget {
               type: AlertType.success,
               desc: "Data correct.")
           .show();
+      Navigator.pushReplacementNamed(context, 'dashboard');
     } else {
       Alert(
               context: context,

@@ -21,6 +21,8 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  # simple_permissions: ^0.1.9
+  qrscan: ^0.2.17
   http: ^0.12.2
   progress_dialog: ^1.2.4
   flutter_svg: ^0.18.0
