@@ -9,10 +9,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:http/http.dart' as http;
 import 'package:progress_dialog/progress_dialog.dart';
+import 'package:sihadir/screens/product/products_screen.dart';
 
 class Body extends StatelessWidget {
   TextEditingController txtUsername = new TextEditingController();
   TextEditingController txtPassword = new TextEditingController();
+  String username;
 
   Body({
     Key key,
@@ -63,6 +65,7 @@ class Body extends StatelessWidget {
                 text: "LOGIN",
                 press: () {
                   this._doLogin(context);
+
                   // Navigator.pushReplacementNamed(context, 'dashboard');
                 }),
             SizedBox(height: size.height * 0.03),
@@ -73,6 +76,7 @@ class Body extends StatelessWidget {
   }
 
   Future _doLogin(BuildContext context) async {
+    username = txtUsername.text;
     if (txtUsername.text.isEmpty || txtPassword.text.isEmpty) {
       Alert(
               context: context,
@@ -97,7 +101,10 @@ class Body extends StatelessWidget {
               type: AlertType.success,
               desc: "Data correct.")
           .show();
-      Navigator.pushReplacementNamed(context, 'dashboard');
+      // Navigator.pushReplacementNamed(context, 'dashboard', username: username);
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => ProductsScreen(username: txtUsername.text),
+      ));
     } else {
       Alert(
               context: context,
